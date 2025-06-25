@@ -9,6 +9,7 @@ const input = document.querySelector('.input__search');
 
 const buttonprev = document.querySelector('.btn-prev');
 
+const Tipo = document.querySelector('.tipo-id');
 
 const buttonnext = document.querySelector('.btn-next');
 
@@ -39,8 +40,9 @@ const renderpokemon = async (pokemon) => {
     pokemonImage.style.display = 'block';
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
+    Tipo.innerHTML = data.types.map(entry => entry.type.name);
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']; 
-        searchPokemon= data.id
+        searchPokemon= data.id;
     input.value = '';
     } else {
         pokemonImage.style.display = 'none';
